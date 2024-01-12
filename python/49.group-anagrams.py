@@ -10,7 +10,7 @@ class Solution:
         hash_map = {}
         length = len(strs)
         for i in range(length):
-            sorted_s = tuple(sorted(strs[i]))
+            sorted_s = ''.join(sorted(strs[i]))
             if sorted_s in hash_map:
                 hash_map[sorted_s].append(strs[i])
             else:
