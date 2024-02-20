@@ -6,6 +6,9 @@
 
 # @lc code=start
 
+from typing import List
+
+
 class Solution:
     # 6464 ms
     # 自分のコード、タイムアウトが起きてしまう。
