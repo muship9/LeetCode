@@ -63,10 +63,27 @@
 #  
 # 
 #  Related Topics Array Hash Table Matrix 👍 10402 👎 1095
+import collections
+from typing import List
 
 
 # leetcode submit region begin(Prohibit modification and deletion)
 class Solution:
     def isValidSudoku(self, board: List[List[str]]) -> bool:
-        
+        x_hash = collections.defaultdict(set)  # 横軸
+        y_hash = collections.defaultdict(set)  # 縦軸
+        square = collections.defaultdict(set)  # 3x3
+
+        for x in range(9):
+            for y in range(9):
+                if board[x][y] == ".":
+                    continue
+                if ((board[x][y] in x_hash[x]) or
+                        (board[x][y] in y_hash[y]) or
+                        (board[x][y] in square[(x // 3, y // 3)])):
+                    return False
+                x_hash[x].add(board[x][y])
+                y_hash[y].add(board[x][y])
+                square[(x // 3, y // 3)].add(board[x][y])
+        return True
 # leetcode submit region end(Prohibit modification and deletion)
