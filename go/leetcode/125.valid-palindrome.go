@@ -42,7 +42,7 @@
 //
 // 👍 9979 👎 8496
 
-package main
+package leetcode
 
 import (
 	"fmt"
@@ -59,7 +59,7 @@ import (
 
 // leetcode submit region begin(Prohibit modification and deletion)
 
-func main() {
+func hoge() {
 	testCases := []string{
 		"racecar",  // 回文
 		"madam",    // 回文
